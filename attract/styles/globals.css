@@ -7,5 +7,7 @@ body {
 }
 .attract-logo {
   width: 15%;
-  align-self: flex-start;
+}
+#mainbanner {
+  background-image: url('../public/mainbanner.jpg');
 }
