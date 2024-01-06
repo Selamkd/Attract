@@ -3,11 +3,16 @@
 @tailwind utilities;
 
 body {
-  background-color: #f8f8ff;
 }
 .attract-logo {
   width: 15%;
 }
-#mainbanner {
-  background-image: url('../public/mainbanner.jpg');
+@media screen and (max-width: 750px) {
+  body {
+    overflow: scroll;
+  }
+}
+
+.banner-buttons a:hover {
+  color: #2c434e;
 }
