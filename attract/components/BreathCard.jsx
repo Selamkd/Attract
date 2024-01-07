@@ -149,7 +149,8 @@ const BreathCard = () => {
         ></div>
       </div>
       <p class="breaths">
-        Breaths remaining: <span className="breaths-text">{breathsLeft}</span>
+        Breaths remaining:{' '}
+        <span className="breaths-text text-[#6495ED]">{breathsLeft}</span>
       </p>
       <p className="my-4">{instructions}</p>
       <button
