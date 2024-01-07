@@ -151,11 +151,11 @@ const BreathCard = () => {
       <p class="breaths">
         Breaths remaining: <span className="breaths-text">{breathsLeft}</span>
       </p>
-      <p className="my-2">{instructions}</p>
+      <p className="my-4">{instructions}</p>
       <button
         className={`start-button ${
           isBreathing ? 'button-inactive' : ''
-        }                   rounded-lg px-4 py-2 border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-gray-100 duration-300`}
+        }                  mt-2 rounded-lg px-4 py-2 border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-gray-100 duration-300`}
         onClick={breathMeter}
         disabled={isBreathing}
       >

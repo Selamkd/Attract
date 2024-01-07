@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Hero from '../public/mainbanner.jpg';
+import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWind, faSpa } from '@fortawesome/free-solid-svg-icons';
 const MainCard = () => {
@@ -10,9 +11,9 @@ const MainCard = () => {
         <div id="mainbanner-img" className="lg:col-span-1">
           <Image src={Hero}></Image>
         </div>
-        <div className="container lg:col-span-1">
-          <div className="indent-1 lg:w-[65%] mx-auto text-center pb-16">
-            <h1 className="text-3xl lg:text-6xl font-bold">
+        <div className="container lg:col-span-1 ">
+          <div className="indent-1 lg:w-[65%] mx-auto text-center pb-8  background-color: #ffc300;">
+            <h1 className="text-3xl lg:text-6xl font-bold mt-19">
               Nurturing Well-being through{' '}
               <span className="text-[#f6bc02]">Attract</span>
             </h1>
@@ -26,8 +27,8 @@ const MainCard = () => {
             </p>
             <div className="banner-buttons flex items-center  justify-center mt-3">
               <div className="primary-btn ">
-                <a
-                  href=""
+                <Link
+                  href="/breath"
                   className="py-3 px-12 rounded-full text-md font-medium border border-black  hover:bg-[#f6cb42] hover:text-[#2c434e]"
                 >
                   Breath{' '}
@@ -35,11 +36,11 @@ const MainCard = () => {
                     className="pl-2 text-[#6495ED] "
                     icon={faWind}
                   />
-                </a>
+                </Link>
               </div>
               <div className="secondary-btn mx-2">
-                <a
-                  href=""
+                <Link
+                  href="/affirm"
                   className="py-3 px-12 rounded-full text-md font-medium border border-black hover:bg-[#f6cb42] hover:text-[#2c434e]"
                 >
                   Affirm{' '}
@@ -47,7 +48,7 @@ const MainCard = () => {
                     className="pl-2 text-[#6495ED] "
                     icon={faSpa}
                   />
-                </a>
+                </Link>
               </div>
             </div>
           </div>

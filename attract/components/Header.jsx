@@ -1,6 +1,6 @@
 import logo from '../public/Attract-logo.png';
 import Image from 'next/image';
-
+import Link from 'next/link';
 const Header = () => {
   console.log(logo);
   return (
@@ -13,15 +13,14 @@ const Header = () => {
             </div>
             <div className="page-menu lg:block">
               <ul className="flex">
+                <li className="mx-4 text-md text-blck font-medium  hover:text-[#f6cb42]">
+                  <Link href="/">Home</Link>
+                </li>
                 <li className="mx-4 text-md text-blck font-medium hover:text-[#f6cb42]">
-                  <a href="http://" target="_blank" rel="noopener noreferrer">
-                    Affirm
-                  </a>
+                  <Link href="/affirm">Affirm</Link>
                 </li>
                 <li className="mx-4 text-md text-blck font-medium  hover:text-[#f6cb42]">
-                  <a href="http://" target="_blank" rel="noopener noreferrer">
-                    Breathe
-                  </a>
+                  <Link href="/breath">Breathe</Link>
                 </li>
               </ul>
             </div>
