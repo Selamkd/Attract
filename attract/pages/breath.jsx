@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 export default function BreathPage() {
   return (
-    <main>
+    <main className="breath-page">
       <Header />
       <BreathCard />
     </main>

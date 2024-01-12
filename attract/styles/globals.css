@@ -7,13 +7,9 @@ body {
 .attract-logo {
   width: 15%;
 }
-@media screen and (max-width: 750px) {
-  body {
-    overflow: scroll;
-  }
-}
+
 .breath-card {
-  overflow: hidden;
+  overflow: scroll !important;
 }
 .banner-buttons a:hover {
   color: #2c434e;
@@ -103,4 +99,7 @@ body {
   text-align: center;
   margin-bottom: 24px;
   font-size: 24px;
+}
+body.disable-scroll {
+  overflow: hidden;
 }
