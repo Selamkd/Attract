@@ -57,12 +57,13 @@ body {
   justify-content: center;
   align-items: center;
   position: relative;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
+  margin-top: 2px;
 }
 
 .circle-outline {
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
   background-color: transparent;
   border: 15px solid #f1f1f1;
@@ -71,8 +72,8 @@ body {
 }
 
 .circle-progress {
-  width: 50px;
-  height: 50px;
+  width: 42px;
+  height: 42px;
   position: absolute;
   background-color: #ffc300;
   border-radius: 50%;
@@ -97,7 +98,7 @@ body {
 }
 .breaths {
   text-align: center;
-  margin-bottom: 24px;
+  margin-bottom: 10px;
   font-size: 24px;
 }
 body.disable-scroll {

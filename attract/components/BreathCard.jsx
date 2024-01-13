@@ -121,7 +121,7 @@ const BreathCard = () => {
   return (
     <div className="min-h-screen flex flex-col justify-start items-center mt-4">
       <h4 className="mb-2">Select the number of breaths </h4>
-      <div className="input mb-6">
+      <div className="input mb-2">
         <select
           className="inline-flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-gray-700 transition  duration-150 ease-in-out bg-white border rounded-md hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800"
           onChange={handleUserInput}
@@ -148,11 +148,9 @@ const BreathCard = () => {
           }`}
         ></div>
       </div>
-      <p class="breaths">
-        Breaths remaining:{' '}
-        <span className="breaths-text text-[#6495ED]">{breathsLeft}</span>
-      </p>
-      <p className="my-4">{instructions}</p>
+      <p class="breaths">Breaths remaining: </p>
+      <span className="breaths-text text-[#]">{breathsLeft}</span>
+      <p className="my-2  text-gray-700 ">{instructions}</p>
       <button
         className={`start-button ${
           isBreathing ? 'button-inactive' : ''

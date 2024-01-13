@@ -14,5 +14,28 @@ module.exports = {
       },
     },
   },
-  plugins: [],
-}
+  plugins: [
+    function ({ addUtilities }) {
+      const newUtilities = {
+        '.chalk-underline': {
+          position: 'relative',
+          display: 'inline-block',
+          textDecoration: 'none',
+          color: 'yellow', // Set your desired text color
+        },
+        '.chalk-underline': {
+          content: '""',
+          position: 'absolute',
+          bottom: '-2px', // Adjust as needed
+          left: '0',
+          width: '100%',
+          height: '2px',
+          backgroundColor: 'red', // Set your desired chalk underline color
+          opacity: '0.7', // Adjust opacity as needed
+          zIndex: '-1',
+        },
+      };
+      addUtilities(newUtilities, ['before', 'after']);
+    },
+  ],
+};

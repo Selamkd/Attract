@@ -39,7 +39,7 @@ const AffirmCard = () => {
           <div className="w-full">
             <p className="text-md text-[#ffc300] font-bold text-center">
               <button
-                className="rounded-lg px-4 py-2 border-2 border-gray-900 text-gray-900 hover:text-[#6495ED] duration-300"
+                className="rounded-lg px-4 py-2 border-2 border-gray-900 text-gray-900 hover:text-[] duration-300"
                 onClick={getRandomAffirmation}
               >
                 Get Affirmation
