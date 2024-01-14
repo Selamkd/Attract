@@ -119,8 +119,8 @@ const BreathCard = () => {
     }
   }, [isBreathing, currentCycle]);
   return (
-    <div className="min-h-screen flex flex-col justify-start items-center mt-4">
-      <h4 className="mb-2">Select the number of breaths </h4>
+    <div className="min-h-screen bg-[#f9f9f9]   flex flex-col justify-start items-center ">
+      <h4 className="mb-2 pt-3">Select the number of breaths </h4>
       <div className="input mb-2">
         <select
           className="inline-flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-gray-700 transition  duration-150 ease-in-out bg-white border rounded-md hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800"

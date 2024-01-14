@@ -7,12 +7,12 @@ import { faWind, faSpa } from '@fortawesome/free-solid-svg-icons';
 const MainCard = () => {
   return (
     <>
-      <section id="mainbanner" className="grid lg:grid-cols-2">
+      <section id="mainbanner" className="grid lg:grid-cols-2 bg-[#f9f9f9] ">
         <div id="mainbanner-img" className="lg:col-span-1">
           <Image src={Hero}></Image>
         </div>
         <div className="container lg:col-span-1 ">
-          <div className="indent-1 lg:w-[65%] mx-auto text-center pb-8  background-color: #ffc300;">
+          <div className="indent-1 lg:w-[65%] mx-auto text-center pb-8  background-color:#EFEDE2;">
             <h1 className="text-3xl lg:text-6xl font-bold mt-19">
               Nurturing Well-being through{' '}
               <span className="text-[#f6bc02]">Attract</span>

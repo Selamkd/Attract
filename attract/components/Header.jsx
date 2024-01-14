@@ -5,7 +5,7 @@ const Header = () => {
   console.log(logo);
   return (
     <>
-      <header className="px-2 lg:px-16 py-1 bg-white sticky top-0">
+      <header className="px-2 lg:px-16 py-1 bg-white sticky top-0 border-b-2 border-gray-200">
         <div className="container-fluid">
           <div className="nav-bar flex items-center justify-between">
             <div className=" left-0">
