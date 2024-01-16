@@ -104,6 +104,14 @@ body {
 body.disable-scroll {
   overflow: hidden;
 }
+body.Journal-scroll {
+  overflow: hidden;
+}
+@media screen and (max-width: 650px) {
+  body.Journal-scroll {
+    overflow: scroll;
+  }
+}
 #mainbanner-img {
   height: 40%;
 }

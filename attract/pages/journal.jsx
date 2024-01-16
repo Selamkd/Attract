@@ -8,17 +8,23 @@ const inter = Inter({ subsets: ['latin'] });
 
 export default function JournalPage() {
   useEffect(() => {
-    document.body.classList.add('disable-scroll');
+    document.body.classList.add('Journal-scroll');
 
     return () => {
-      document.body.classList.remove('disable-scroll');
+      document.body.classList.remove('Journal-scroll');
     };
   }, []);
   return (
     <main className="Journal-page">
       <Header />
-      <JournalEntries />
-      <JournalForm />
+      <section className="grid lg:grid-cols-2 bg-[#f9f9f9]">
+        <div className="lg:col-span-1 overflow-scroll h-screen ">
+          <JournalEntries />
+        </div>
+        <div className=" lg:col-span-1 ">
+          <JournalForm />
+        </div>
+      </section>
     </main>
   );
 }

@@ -28,14 +28,20 @@ const JournalEntries = () => {
   };
 
   return (
-    <div>
-      <h1>Journal Entries</h1>
+    <div className="flex flex-col overflow-scroll">
+      <div className="flex flex-row justify-center">
+        <h1>New entry </h1>
+      </div>
       {journalEntries.map((entry) => {
         return (
-          <div key={entry.id}>
-            <h3>{formatDate(entry.created_at)}</h3>
-            <h2>{entry.title}</h2>
-            <p>{entry.content}</p>
+          <div key={entry.id} className="p-8 rounded-xl ">
+            <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
+              <h3>{formatDate(entry.created_at)}</h3>
+            </div>
+            <h2 className="block mt-1 text-lg leading-tight font-medium text-black">
+              {entry.title}
+            </h2>
+            <p className="mt-2 text-gray-500">{entry.content}</p>
           </div>
         );
       })}

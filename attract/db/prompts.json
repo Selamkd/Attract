@@ -1,0 +1,101 @@
+[
+  { "id": 1, "prompt": "What qualities am I grateful to embody?" },
+  { "id": 2, "prompt": "I am my most authentic self when I…" },
+  { "id": 3, "prompt": "What part of myself longs for more self-compassion?" },
+  { "id": 4, "prompt": "My highest values in life are…" },
+  { "id": 5, "prompt": "What made me smile today?" },
+  { "id": 6, "prompt": "What comes easily to me these days?" },
+  {
+    "id": 7,
+    "prompt": "In what ways (small or big) do I impact the world around me?"
+  },
+  { "id": 8, "prompt": "What habits am I working to change?" },
+  {
+    "id": 9,
+    "prompt": "What’s something I’m procrastinating on right now? Why am I avoiding it?"
+  },
+  { "id": 10, "prompt": "What are 3 things I’m grateful for today?" },
+  {
+    "id": 11,
+    "prompt": "What are the three qualities I love most about myself?"
+  },
+  {
+    "id": 12,
+    "prompt": "What is the strongest feeling I am experiencing right now?"
+  },
+  {
+    "id": 13,
+    "prompt": "What are my top fears? How are these fears holding me back?"
+  },
+  {
+    "id": 14,
+    "prompt": "What do I want to achieve in the next week, month, and year?"
+  },
+  { "id": 15, "prompt": "I am happy because…" },
+  {
+    "id": 16,
+    "prompt": "What’s the one thing I couldn’t imagine my life without?"
+  },
+  {
+    "id": 17,
+    "prompt": "What’s my biggest mistake? What did I learn from it?"
+  },
+  {
+    "id": 18,
+    "prompt": "What kind of an adult did I want to become as a child? Am I that person now?"
+  },
+  { "id": 19, "prompt": "What am I proud of the most?" },
+  { "id": 20, "prompt": "What is the best day in my life so far? Why?" },
+  { "id": 21, "prompt": "This week’s one worthy memory." },
+  { "id": 22, "prompt": "1 thing I learned from today/this week/month/year…" },
+  { "id": 23, "prompt": "What is my intention for tomorrow?" },
+  { "id": 24, "prompt": "Today I found bliss in…" },
+  {
+    "id": 25,
+    "prompt": "What are the aspects of my life that I sometimes take for granted?"
+  },
+  {
+    "id": 26,
+    "prompt": "What do I value the most in a friend? Who is my closest friend? How have they changed me?"
+  },
+  {
+    "id": 27,
+    "prompt": "Describe your dream treehouse. How would it look and what would be inside?"
+  },
+  {
+    "id": 28,
+    "prompt": "Imagine you are a famous inventor. What would you invent and why?"
+  },
+  {
+    "id": 29,
+    "prompt": "Create a superhero alter ego for yourself. Describe their costume, powers, and mission."
+  },
+  {
+    "id": 30,
+    "prompt": "If you could invent a new holiday, what would it be called and how would you celebrate it?"
+  },
+  {
+    "id": 31,
+    "prompt": "If you could spend a day inside a famous painting, which one would you choose and what would you do there?"
+  },
+  {
+    "id": 32,
+    "prompt": "Write a letter to your favourite author expressing how their book has impacted you."
+  },
+  {
+    "id": 33,
+    "prompt": "Imagine you are the ruler of a magical kingdom. Describe your castle, your subjects, and the laws you would enact."
+  },
+  {
+    "id": 34,
+    "prompt": "List your favourite things about yourself and celebrate your unique qualities and strengths."
+  },
+  {
+    "id": 35,
+    "prompt": "Imagine you are a character in a delightful children's book. Describe your whimsical world and the adventures you have."
+  },
+  {
+    "id": 36,
+    "prompt": "If you could have a personal theme song, what would it be, and why?"
+  }
+]

@@ -11,7 +11,7 @@ const MainCard = () => {
         <div id="mainbanner-img" className="lg:col-span-1">
           <Image src={Hero}></Image>
         </div>
-        <div className="container lg:col-span-1 ">
+        <div className=" lg:col-span-1 ">
           <div className="indent-1 lg:w-[65%] mx-auto text-center pb-8  background-color:#EFEDE2;">
             <h1 className="text-3xl lg:text-6xl font-bold mt-19">
               Nurturing Well-being through{' '}
