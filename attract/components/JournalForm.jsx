@@ -7,13 +7,31 @@ const JournalForm = ({ onAddEntry }) => {
   //state to store the title, content and time of the journal entry
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
-
+  const [refresh, setRefresh] = useState(false);
   const [prompt, setPrompt] = useState('');
+  const [cardColor, setCardColor] = useState('');
+
+  const colors = [
+    '#6A5ACD',
+    '	#3CB371',
+    '#8FBC8B',
+    '#081438',
+    '#B0C4DE',
+    '#FFC300',
+    '#FF5733',
+    '#C70039',
+    '#900C3F',
+  ];
+
+  const getRandomColor = () => {
+    return colors[Math.floor(Math.random() * colors.length)];
+  };
 
   const getRandomPrompt = () => {
     const randomIndex = Math.floor(Math.random() * prompts.length);
-    console.log(prompt);
+
     setPrompt(prompts[randomIndex].prompt);
+    setCardColor(getRandomColor());
   };
 
   useEffect(() => {
@@ -40,13 +58,16 @@ const JournalForm = ({ onAddEntry }) => {
   }
   return (
     <div className="flex flex-col  ">
-      <div className="flex items-center bg-[#FFC300] text-white text-sm font-bold px-4 py-3">
+      <div
+        className="flex items-center justify-between   text-white text-sm font-bold px-4 py-3"
+        style={{ backgroundColor: cardColor }}
+      >
         <h3>{prompt}</h3>{' '}
         <FontAwesomeIcon onClick={getRandomPrompt} icon={faRetweet} />
       </div>
       <form
         onSubmit={handleSubmit}
-        className="bg-[	#F4C430] overflow-hidden px-8 rounded-xl shadow-md h-screen flex flex-col justify-start mt-5 pt-4"
+        className="bg-[	#F4C430] overflow-hidden px-8 rounded-xl pb-4 shadow-md h-screen  flex flex-col justify-start mt-5 pt-4"
       >
         <h2 className="text-2xl font-bold mb-6">Add Journal Entry</h2>
 

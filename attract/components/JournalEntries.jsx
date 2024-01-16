@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import supabase from '../utils/supabase';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFeather } from '@fortawesome/free-solid-svg-icons';
 const JournalEntries = () => {
   // state to store the Journal entries from the database
   const [journalEntries, setJournalEntries] = useState([]);
@@ -28,9 +30,9 @@ const JournalEntries = () => {
   };
 
   return (
-    <div className="flex flex-col overflow-scroll">
-      <div className="flex flex-row justify-center">
-        <h1>New entry </h1>
+    <div id="entries" className="flex flex-col ">
+      <div className="flex flex-row justify-end">
+        {/* <FontAwesomeIcon icon={faFeather} /> */}
       </div>
       {journalEntries.map((entry) => {
         return (

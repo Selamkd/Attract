@@ -7,21 +7,24 @@ import { useEffect } from 'react';
 const inter = Inter({ subsets: ['latin'] });
 
 export default function JournalPage() {
-  useEffect(() => {
-    document.body.classList.add('Journal-scroll');
+  // useEffect(() => {
+  //   document.body.classList.add('Journal-scroll');
 
-    return () => {
-      document.body.classList.remove('Journal-scroll');
-    };
-  }, []);
+  //   return () => {
+  //     document.body.classList.remove('Journal-scroll');
+  //   };
+  // }, []);
   return (
     <main className="Journal-page">
       <Header />
-      <section className="grid lg:grid-cols-2 bg-[#f9f9f9]">
-        <div className="lg:col-span-1 overflow-scroll h-screen ">
+      <section className="grid sm:grid-cols-1 lg:grid-cols-2 bg-[#f9f9f9]">
+        <div
+          id="entries"
+          className="lg:col-span-1 sm:col-span-1 overflow-scroll h-screen "
+        >
           <JournalEntries />
         </div>
-        <div className=" lg:col-span-1 ">
+        <div className="lg:col-span-1 sm:col-span-1 ">
           <JournalForm />
         </div>
       </section>
