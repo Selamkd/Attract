@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
-
-const JournalCard = () => {
+import { supabase } from '../utils/supabase.js';
+const JournalEntries = () => {
   return (
     <div>
       <h1>Journal Card</h1>
     </div>
   );
 };
-export default JournalCard;
+export default JournalEntries;
