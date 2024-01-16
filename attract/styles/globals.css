@@ -104,3 +104,6 @@ body {
 body.disable-scroll {
   overflow: hidden;
 }
+#mainbanner-img {
+  height: 40%;
+}

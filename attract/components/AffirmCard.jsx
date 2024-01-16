@@ -57,7 +57,7 @@ const AffirmCard = () => {
               class="rounded-t-xl w-full h-64 shadow-sm bg-cover"
               style={{
                 backgroundImage:
-                  'url("https://apod.nasa.gov/apod/image/2208/Cartwheel_Webb_960.jpg")',
+                  'url("https://images.squarespace-cdn.com/content/v1/540d9bd0e4b0b3f7fc675613/1629033190317-Z451QM2MARXUSUTVR321/you+are+so+easy+to+love.jpg?format=1500w")',
               }}
             ></div>
 
@@ -66,7 +66,7 @@ const AffirmCard = () => {
 
               <div class="flex mt-4">
                 <button
-                  className="rounded-lg px-4 py-2 border-2 border-gray-900 hover:bg-gray-900  hover:text-gray-100 duration-300 text-gray-900 hover:text-[] duration-300"
+                  className="rounded-lg px-4 py-2 border-2 border-gray-900 hover:bg-gray-900  hover:text-gray-100  text-gray-900 hover:text-[] duration-300"
                   onClick={getRandomAffirmation}
                 >
                   Get Affirmation

@@ -31,7 +31,7 @@ const MainCard = () => {
                   href="/breath"
                   className="py-3 px-12 rounded-full text-md font-medium border border-black  hover:bg-[#f6cb42] hover:text-[#2c434e]"
                 >
-                  Breath{' '}
+                  Breathe{' '}
                   <FontAwesomeIcon
                     className="pl-2 text-[#6495ED] "
                     icon={faWind}
