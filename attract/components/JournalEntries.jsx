@@ -3,14 +3,32 @@ import supabase from '../utils/supabase';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFeather } from '@fortawesome/free-solid-svg-icons';
 const JournalEntries = () => {
-  // state to store the Journal entries from the database
   const [journalEntries, setJournalEntries] = useState([]);
-  // fetch the entries from the table
-
+  const [userId, setUserId] = useState('');
+  useEffect(() => {
+    const authListener = supabase.auth.onAuthStateChange((event, session) => {
+      const currentUser = session?.user;
+      const newUserId = currentUser?.id || '';
+      if (newUserId) {
+        console.log(' here');
+      }
+      setUserId(newUserId);
+    });
+  }, []);
   useEffect(() => {
     const fetchEntries = async () => {
       try {
-        const { data, error } = await supabase.from('attract').select('*');
+        if (!userId) {
+          console.log('User ID is empty. Skipping fetch.');
+          return;
+        }
+
+        const { data, error } = await supabase
+          .from('attract')
+          .select('*')
+          .eq('user_id', userId)
+          .order('created_at', { ascending: false });
+
         if (error) throw error;
 
         setJournalEntries(data);
@@ -18,19 +36,9 @@ const JournalEntries = () => {
         console.error('Error fetching journal entries', error);
       }
     };
-    const authListener = supabase.auth.onAuthStateChange((event, session) => {
-      const currentUser = session?.user;
-      setJournalEntries(currentUser?.user_metadata?.journalEntries || []);
 
-      if (currentUser) {
-        fetchEntries();
-      } else {
-        console.log('Please log in to view your journal entries');
-      }
-    });
-  }, []);
-
-  // convert the time stamp to a name of the day and date of the month format
+    fetchEntries();
+  }, [userId]);
   const formatDate = (timestamp) => {
     const customDate = { weekday: 'short', day: 'numeric' };
     const formattedDate = new Date(timestamp).toLocaleDateString(
@@ -39,7 +47,6 @@ const JournalEntries = () => {
     );
     return formattedDate.toUpperCase();
   };
-
   return (
     <div id="entries" className="flex flex-col ">
       <div className="flex flex-row justify-end">

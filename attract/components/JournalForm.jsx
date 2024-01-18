@@ -10,7 +10,7 @@ const JournalForm = ({ onAddEntry }) => {
   const [refresh, setRefresh] = useState(false);
   const [prompt, setPrompt] = useState('');
   const [cardColor, setCardColor] = useState('');
-  const [username, setUsername] = useState('');
+  const [user_id, setUserId] = useState('');
 
   const colors = [
     '#6495ED',
@@ -44,8 +44,8 @@ const JournalForm = ({ onAddEntry }) => {
   useEffect(() => {
     const { data: authListener } = supabase.auth.onAuthStateChange(
       (event, session) => {
-        const currentUser = session?.user;
-        setUsername(currentUser);
+        const currentUser = session?.user.id;
+        setUserId(currentUser);
         setTitle(currentUser?.user_metadata?.title || '');
         setContent(currentUser?.user_metadata?.content || '');
       }
@@ -59,18 +59,25 @@ const JournalForm = ({ onAddEntry }) => {
     try {
       const { data, error } = await supabase
         .from('attract')
-        .insert([{ title, content, created_at: new Date(), username }]);
+        .insert([{ title, content, created_at: new Date(), user_id }]);
       if (error) throw error;
-      if (data && currentUser) {
+      if (data) {
         onAddEntry(data[0]);
-        fetchEntries();
-        setTitle('');
-        setContent('');
+        handleClearInput();
       }
     } catch (error) {
       console.log('Error submitting journal entry', error.message);
     }
   }
+  const handleClearInput = () => {
+    alert('Entry added!');
+
+    setTimeout(() => {
+      setTitle('');
+      setContent('');
+      window.location.reload();
+    }, 2000);
+  };
   return (
     <div className="flex flex-col  ">
       <div
@@ -111,6 +118,7 @@ const JournalForm = ({ onAddEntry }) => {
         </div>
 
         <button
+          onClick={handleClearInput}
           type="submit"
           className="rounded-lg px-4 py-2 border-2 border-gray-900 hover:bg-gray-900  hover:text-gray-100  text-gray-900 hover:text-[] duration-300"
         >
