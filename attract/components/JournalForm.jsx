@@ -10,17 +10,21 @@ const JournalForm = ({ onAddEntry }) => {
   const [refresh, setRefresh] = useState(false);
   const [prompt, setPrompt] = useState('');
   const [cardColor, setCardColor] = useState('');
+  const [username, setUsername] = useState('');
 
   const colors = [
+    '#6495ED',
+    '		#BDB76B',
     '#6A5ACD',
-    '	#3CB371',
-    '#8FBC8B',
-    '#081438',
-    '#B0C4DE',
-    '#FFC300',
-    '#FF5733',
-    '#C70039',
-    '#900C3F',
+    '#483D8B',
+    '	#301934',
+    '#9F2B68',
+    '#E37383',
+    '#483248',
+    '	#CC5500',
+    '#953553',
+    '#630330',
+    '#E49B0F',
   ];
 
   const getRandomColor = () => {
@@ -37,6 +41,16 @@ const JournalForm = ({ onAddEntry }) => {
   useEffect(() => {
     getRandomPrompt();
   }, []);
+  useEffect(() => {
+    const { data: authListener } = supabase.auth.onAuthStateChange(
+      (event, session) => {
+        const currentUser = session?.user;
+        setUsername(currentUser);
+        setTitle(currentUser?.user_metadata?.title || '');
+        setContent(currentUser?.user_metadata?.content || '');
+      }
+    );
+  }, []);
   // function to handle the form submission
 
   async function handleSubmit(e) {
@@ -45,10 +59,11 @@ const JournalForm = ({ onAddEntry }) => {
     try {
       const { data, error } = await supabase
         .from('attract')
-        .insert([{ title, content, created_at: new Date() }]);
+        .insert([{ title, content, created_at: new Date(), username }]);
       if (error) throw error;
-      if (data) {
+      if (data && currentUser) {
         onAddEntry(data[0]);
+        fetchEntries();
         setTitle('');
         setContent('');
       }

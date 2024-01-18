@@ -12,13 +12,24 @@ const JournalEntries = () => {
       try {
         const { data, error } = await supabase.from('attract').select('*');
         if (error) throw error;
+
         setJournalEntries(data);
       } catch (error) {
         console.error('Error fetching journal entries', error);
       }
     };
-    fetchEntries();
+    const authListener = supabase.auth.onAuthStateChange((event, session) => {
+      const currentUser = session?.user;
+      setJournalEntries(currentUser?.user_metadata?.journalEntries || []);
+
+      if (currentUser) {
+        fetchEntries();
+      } else {
+        console.log('Please log in to view your journal entries');
+      }
+    });
   }, []);
+
   // convert the time stamp to a name of the day and date of the month format
   const formatDate = (timestamp) => {
     const customDate = { weekday: 'short', day: 'numeric' };

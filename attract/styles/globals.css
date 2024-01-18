@@ -112,3 +112,10 @@ body.Journal-scroll {
 #mainbanner-img {
   height: 40%;
 }
+.box {
+  border-radius: 2rem;
+}
+
+.border-t-10 {
+  border-top-width: 10px;
+}

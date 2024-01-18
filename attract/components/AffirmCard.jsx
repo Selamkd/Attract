@@ -12,43 +12,7 @@ const AffirmCard = () => {
     getRandomAffirmation();
   }, []);
   return (
-    // <section
-    //   className="flex flex-col h-min-screen  bg-[#EFEDE2]  items-centerjustify-start min-h-screen "
-    //   id="affirmation"
-    // >
-    //   <div className="min-w-screen bg-[#EFEDE2] flex items-center  mt-6  justify-center px-5 py-5">
-    //     <div
-    //       className="w-full mx-auto rounded-lg border border-e-red-300 bg-white shadow-lg px-10 pt-10 pb-10 text-gray-800"
-    //       style={{ maxWidth: '500px' }}
-    //     >
-    //       <div className="w-full pt-1 pb-5">
-    //         <div className="overflow-hidden rounded-full w-20 h-20 -mt-16 mx-auto shadow-lg">
-    //           <img
-    //             src="https://images.squarespace-cdn.com/content/v1/540d9bd0e4b0b3f7fc675613/1629033190317-Z451QM2MARXUSUTVR321/you+are+so+easy+to+love.jpg?format=1500w"
-    //             alt=""
-    //           />
-    //         </div>
-    //       </div>
-    //       <div className="w-full mb-10">
-    //         <div className="text-3xl text-[#ffc300] text-left leading-tight h-3"></div>
-    //         <p className="text-md py-4 text-gray-700 text-center px-5">
-    //           {currentAffirmation.affirmation}
-    //         </p>
-    //         <div className="text-3xl text-[#ffc300] text-right leading-tight h-3 -mt-3"></div>
-    //       </div>
-    //       <div className="w-full">
-    //         <p className="text-md text-[#ffc300] font-bold text-center">
-    //           <button
-    //             className="rounded-lg px-4 py-2 border-2 border-gray-900 text-gray-900 hover:text-[] duration-300"
-    //             onClick={getRandomAffirmation}
-    //           >
-    //             Get Affirmation
-    //           </button>
-    //         </p>
-    //       </div>
-    //     </div>
-    //   </div>
-    // </section>
+    //
     <section className="flex flex-col h-min-screen  bg-[#f9f9f9]  items-center justify-start min-h-screen ">
       <div class="px-2 md:px-6 my-3 w-full text-slate-700  dark:text-white flex mt-10 flex-col items-center">
         <div class="max-w-xl text-left flex flex-col w-full items-center justify-center md:p-4  rounded-xl">
