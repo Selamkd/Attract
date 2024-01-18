@@ -10,9 +10,9 @@ const JournalEntries = () => {
       const currentUser = session?.user;
       const newUserId = currentUser?.id || '';
       if (newUserId) {
-        console.log(' here');
+        setUserId(newUserId);
+        console.log(userId);
       }
-      setUserId(newUserId);
     });
   }, []);
   useEffect(() => {

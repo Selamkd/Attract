@@ -51,6 +51,7 @@ const JournalForm = ({ onAddEntry }) => {
       }
     );
   }, []);
+
   // function to handle the form submission
 
   async function handleSubmit(e) {
@@ -70,8 +71,11 @@ const JournalForm = ({ onAddEntry }) => {
     }
   }
   const handleClearInput = () => {
-    alert('Entry added!');
-
+    if (user_id) {
+      alert('Entry added!');
+    } else {
+      alert('Please log in to add an entry');
+    }
     setTimeout(() => {
       setTitle('');
       setContent('');

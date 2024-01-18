@@ -1,83 +1,74 @@
 'use client';
+import uuuid from 'uuid';
 import { v4 as uuid } from 'uuid';
 import supabase from '../utils/supabase.js';
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-
+import router from 'next/router';
+import logo from '../public/Attract-logo.png';
+import Image from 'next/image';
 export default function Register() {
-  const [username, setUserName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const router = useRouter();
+  const [formData, setFormData] = useState({
+    username: '',
+    email: '',
+    password: '',
+  });
 
-  const handleUserName = (e) => {
-    const { value } = e.currentTarget;
-    setUserName(value);
-  };
-  const handleSubmit = async (e) => {
+  console.log(formData);
+
+  function handleChange(event) {
+    setFormData((prevFormData) => {
+      return {
+        ...prevFormData,
+        [event.target.name]: event.target.value,
+      };
+    });
+  }
+
+  async function handleSubmit(e) {
     e.preventDefault();
 
     try {
-      if (
-        typeof email === 'string' &&
-        typeof password === 'string' &&
-        typeof username === 'string'
-      ) {
-        const { user, error } = await supabase.auth.signUp({
-          email,
-          password,
-          options: {
-            data: {
-              username,
-            },
+      const { user, error } = await supabase.auth.signUp({
+        email: formData.email,
+        password: formData.password,
+        options: {
+          data: {
+            username: formData.username,
           },
-        });
+        },
+      });
 
-        if (error) {
-          throw error;
-        }
+      if (error) throw error;
 
-        await supabase.from('user_profiles').upsert([
+      const { data: userProfileData, error: userProfileError } = await supabase
+        .from('user_profiles')
+        .upsert([
           {
             id: uuid(),
-            user_id: uuid(),
-            username,
-            email,
+            username: formData.username,
+            email: formData.email,
           },
         ]);
 
-        // Manually trigger email verification
-        await supabase.auth.sendVerificationEmail(user.email);
+      if (userProfileError) throw userProfileError;
 
-        alert('Check your email for the confirmation link.');
-        router.push('/');
-      } else {
-        throw new Error('Please fill out all fields');
-      }
+      alert('Check your email for verification link');
     } catch (error) {
-      alert(error.message);
+      alert(error);
     }
-  };
-
-  useEffect(() => {
-    const handleAuthStateChange = async (event, session) => {
-      if (event === 'SIGNED_IN' && session.user) {
-        if (session.user.email_verified) {
-          router.push('/');
-        } else {
-          alert('Please verify your email address.');
-        }
-      }
-    };
-  }, [router]);
+  }
 
   return (
     <>
       <section className="bg-gray-50 min-h-screen flex items-center justify-center">
         <div className="bg-gray-100 flex rounded-2xl shadow-lg max-w-3xl p-5 items-center">
           <div className="md:w-1/2 px-8 md:px-16">
-            <h2 className="font-bold text-2xl text-indigo">
+            <div className="flex items-center mb-3 justify-center">
+              <Image className="attract-form" src={logo} alt="Logo" />
+            </div>
+            <h2 className="font-bold text-2xl text-[#002D74] text-indigo">
               {' '}
               Create an account{' '}
             </h2>
@@ -91,8 +82,7 @@ export default function Register() {
                 type="email"
                 id="email"
                 name="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={handleChange}
                 placeholder="Email"
               />
               <div class="relative">
@@ -101,7 +91,7 @@ export default function Register() {
                   type="password"
                   id="password"
                   name="password"
-                  onChange={(e) => setPassword(e.target.value)}
+                  onChange={handleChange}
                   placeholder="Password"
                 />
 
@@ -123,8 +113,7 @@ export default function Register() {
                 id="username"
                 name="username"
                 placeholder="User name"
-                value={username}
-                onChange={handleUserName}
+                onChange={handleChange}
               />
               <button
                 type="submit"
@@ -133,10 +122,15 @@ export default function Register() {
                 Register
               </button>
             </form>
-
+            <Link
+              href="/home"
+              class=" text-xs border-b border-[#002D74] py-2 text-[#6A5ACD] flex justify-center "
+            >
+              <p className="mt-4">I'm just browsing</p>
+            </Link>
             <div class="mt-6 text-xs flex justify-between items-center text-[#002D74]">
               <p className="mr-1">Already have an account?</p>
-              <Link href="/login">
+              <Link href="/">
                 <button className="rounded-lg px-5 py-1 border-2 border-gray-900 hover:bg-gray-900  hover:text-gray-100  text-gray-900 hover:text-[] duration-300">
                   Log in
                 </button>
@@ -147,7 +141,7 @@ export default function Register() {
           <div class="md:block hidden w-1/2">
             <img
               class="rounded-2xl"
-              src="https://images.unsplash.com/photo-1648598884813-7dfd1c2886d9?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src="https://i.pinimg.com/564x/04/52/5d/04525d022af37b112726bacb7e995257.jpg"
             />
           </div>
         </div>

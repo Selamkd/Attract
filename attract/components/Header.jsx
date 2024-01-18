@@ -1,4 +1,6 @@
+import { faArrowRightToBracket } from '@fortawesome/free-solid-svg-icons';
 import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import logo from '../public/Attract-logo.png';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -20,24 +22,27 @@ const Header = () => {
   const handleLogout = async () => {
     await supabase.auth.signOut();
     setAuthenticated(false);
-    router.push('/login');
+    router.push('/');
   };
   const handleLogin = () => {
-    router.push('/');
+    router.push('/home');
   };
 
   return (
     <>
-      <header className="px-2 lg:px-16 py-1 bg-white sticky top-0 border-b-2 border-gray-200">
+      <header
+        id="header"
+        className="px-2 lg:px-16 py-1 bg-white sticky top-0 border-b-2 border-gray-200"
+      >
         <div className="container-fluid">
           <div className="nav-bar flex items-center justify-between">
-            <div className=" left-0">
-              <Image src={logo} alt="Logo" />
+            <div className="left-0">
+              <Image className="attract-logo" src={logo} alt="Logo" />
             </div>
             <div className="page-menu lg:block">
               <ul className="flex">
                 <li className="mx-4 text-md text-blck font-medium  hover:text-[#f6cb42]">
-                  <Link href="/">Home</Link>
+                  <Link href="/home">Home</Link>
                 </li>
                 <li className="mx-4 text-md text-blck font-medium hover:text-[#f6cb42]">
                   <Link href="/affirm">Affirm</Link>
@@ -49,9 +54,23 @@ const Header = () => {
                   <Link href="/journal">Journal</Link>
                 </li>
                 {authenticated ? (
-                  <button onClick={handleLogout}>Log out</button>
+                  <FontAwesomeIcon
+                    onClick={handleLogout}
+                    icon={faArrowRightToBracket}
+                    className="rounded-lg px-3  mx-4 mb-1 py-1  hover:text-gray-100 hover:bg-black  text-gray-900 hover:text-[] duration-300 ml-auto "
+                  />
                 ) : (
-                  <button onClick={handleLogin}>Log in</button>
+                  // <button
+                  //   className="rounded-lg px-3  mx-4 mb-1 py-1 border-2 border-gray-900 hover:bg-gray-900  hover:text-gray-100  text-gray-900 hover:text-[] duration-300"
+                  //   onClick={handleLogout}
+                  // >
+                  //   Log out
+                  // </button>
+                  <FontAwesomeIcon
+                    onClick={handleLogout}
+                    icon={faRightFromBracket}
+                    className="rounded-lg px-3  mx-4 mb-1 hover:text-gray-100 hover:bg-black  text-gray-900 hover:text-[] duration-300 ml-auto "
+                  />
                 )}
               </ul>
             </div>

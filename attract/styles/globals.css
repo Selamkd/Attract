@@ -1,18 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 body {
 }
 .attract-logo {
-  width: 15%;
+  width: 75% !important;
+}
+.attract-form {
+  width: 20%;
 }
 
 .breath-card {
   overflow: scroll !important;
 }
 .banner-buttons a:hover {
-  color: #2c434e;
+  color: white;
 }
 .dropdown:hover .dropdown-menu {
   display: block;
@@ -118,4 +121,7 @@ body.Journal-scroll {
 
 .border-t-10 {
   border-top-width: 10px;
+}
+#header {
+  font-family: 'Montserrat', sans-serif;
 }
