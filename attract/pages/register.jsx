@@ -40,11 +40,13 @@ export default function Register() {
 
     try {
       const { user, error } = await supabase.auth.signUp({
+        id: userId,
         email: formData.email,
         password: formData.password,
-
-        data: {
-          username: formData.username,
+        options: {
+          data: {
+            username: formData.username,
+          },
         },
       });
 
@@ -54,7 +56,7 @@ export default function Register() {
         .from('user_profiles')
         .upsert([
           {
-            user_id: userId,
+            id: userId,
             username: formData.username,
             email: formData.email,
           },
