@@ -1,6 +1,6 @@
 'use client';
 import uuuid from 'uuid';
-import { v4 as uuid } from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 import supabase from '../utils/supabase.js';
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
@@ -9,6 +9,7 @@ import router from 'next/router';
 import logo from '../public/Attract-logo.png';
 import Image from 'next/image';
 export default function Register() {
+  const userId = uuidv4();
   useEffect(() => {
     document.body.classList.add('disable-scroll');
 
@@ -16,6 +17,7 @@ export default function Register() {
       document.body.classList.remove('disable-scroll');
     };
   }, []);
+
   const [formData, setFormData] = useState({
     username: '',
     email: '',
@@ -40,10 +42,9 @@ export default function Register() {
       const { user, error } = await supabase.auth.signUp({
         email: formData.email,
         password: formData.password,
-        options: {
-          data: {
-            username: formData.username,
-          },
+
+        data: {
+          username: formData.username,
         },
       });
 
@@ -53,7 +54,7 @@ export default function Register() {
         .from('user_profiles')
         .upsert([
           {
-            id: uuid(),
+            user_id: userId,
             username: formData.username,
             email: formData.email,
           },

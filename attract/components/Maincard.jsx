@@ -28,8 +28,8 @@ const MainCard = () => {
               mindfulness, Attract seamlessly blends breath and affirmations to
               empower you on your journey to inner balance.
             </p>
-            <div className="banner-buttons flex items-center  justify-center mt-3">
-              <div className="secondary-btn mx-2 flex">
+            <div className="banner-buttons flex items-center  justify-center mt-3 ">
+              <div className="secondary-btn mx-2 flex ">
                 <Link href="/journal" className="home-button">
                   Journal <FontAwesomeIcon className="icon" icon={faBook} />
                 </Link>
@@ -39,7 +39,7 @@ const MainCard = () => {
                   Breathe <FontAwesomeIcon className="icon" icon={faWind} />
                 </Link>
               </div>
-              <div className="secondary-btn mx-2">
+              <div className="secondary-btn mx-2 flex">
                 <Link href="/affirm" className="home-button" id="unique">
                   Affirm <FontAwesomeIcon className="icon" icon={faSpa} />
                 </Link>
