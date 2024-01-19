@@ -21,14 +21,14 @@ const MainCard = () => {
               <span className="text-[#f6bc02]">Attract</span>
             </h1>
 
-            <p className="py-3 mb-3 sm:mt-5">
+            <p className="py-3 mb-3">
               Welcome to Attract, your personal guide to a more mindful life.
               Crafted with care, Attract is your mindful companion designed to
               elevate your daily experience. Rooted in tranquility and
               mindfulness, Attract seamlessly blends breath and affirmations to
               empower you on your journey to inner balance.
             </p>
-            <div className=" flex items-center sm:mt-10  justify-center mt-3">
+            <div className="banner-buttons flex items-center  justify-center mt-3">
               <div className="secondary-btn mx-2 flex">
                 <Link href="/journal" className="home-button">
                   Journal <FontAwesomeIcon className="icon" icon={faBook} />
@@ -39,9 +39,9 @@ const MainCard = () => {
                   Breathe <FontAwesomeIcon className="icon" icon={faWind} />
                 </Link>
               </div>
-              <div className="secondary-btn mx-2 flex">
+              <div className="secondary-btn mx-2">
                 <Link href="/affirm" className="home-button" id="unique">
-                  Affirm <FontAwesomeIcon className="icon " icon={faSpa} />
+                  Affirm <FontAwesomeIcon className="icon" icon={faSpa} />
                 </Link>
               </div>
             </div>

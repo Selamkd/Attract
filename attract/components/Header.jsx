@@ -42,7 +42,7 @@ const Header = () => {
             <div className="page-menu lg:block">
               <ul className="flex">
                 <li className="mx-4 text-md text-blck font-medium  hover:text-[#f6cb42]">
-                  <Link href="/About">About</Link>
+                  <Link href="/about">About</Link>
                 </li>
                 <li className="mx-4 text-md text-blck font-medium  hover:text-[#f6cb42]">
                   <Link href="/home">Home</Link>

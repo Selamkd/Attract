@@ -2,7 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+html {
+  scroll-behavior: smooth;
+  margin: 0 !important;
+}
+html,
 body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
 }
 .attract-logo {
   width: 75% !important;
@@ -111,10 +121,33 @@ body.Journal-scroll {
   overflow: hidden;
 }
 @media screen and (max-width: 650px) {
+  #margin-div {
+    margin-bottom: 0.5em;
+  }
+  #h1-about {
+    margin-top: 0.5em;
+    padding-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+  #mainbanner-img {
+    height: 40%;
+  }
+  #about-img {
+    margin-left: 5rem;
+    margin-bottom: 2rem;
+  }
+  #service-title {
+    text-align: center;
+    margin-top: 1em;
+  }
+  #about-affirm {
+    margin-left: 3rem;
+  }
+  #about-journal {
+    display: none;
+  }
 }
-#mainbanner-img {
-  height: 40%;
-}
+
 .box {
   border-radius: 2rem;
 }
@@ -122,6 +155,7 @@ body.Journal-scroll {
 .border-t-10 {
   border-top-width: 10px;
 }
+
 #header {
   font-family: 'Montserrat', sans-serif;
 }
