@@ -9,6 +9,13 @@ import router from 'next/router';
 import logo from '../public/Attract-logo.png';
 import Image from 'next/image';
 export default function Register() {
+  useEffect(() => {
+    document.body.classList.add('disable-scroll');
+
+    return () => {
+      document.body.classList.remove('disable-scroll');
+    };
+  }, []);
   const [formData, setFormData] = useState({
     username: '',
     email: '',

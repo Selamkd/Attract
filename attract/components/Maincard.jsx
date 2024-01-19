@@ -21,48 +21,27 @@ const MainCard = () => {
               <span className="text-[#f6bc02]">Attract</span>
             </h1>
 
-            <p className="py-3 mb-3">
+            <p className="py-3 mb-3 sm:mt-5">
               Welcome to Attract, your personal guide to a more mindful life.
               Crafted with care, Attract is your mindful companion designed to
               elevate your daily experience. Rooted in tranquility and
               mindfulness, Attract seamlessly blends breath and affirmations to
               empower you on your journey to inner balance.
             </p>
-            <div className="banner-buttons flex items-center  justify-center mt-3">
-              <div className="secondary-btn mx-2">
-                <Link
-                  href="/journal"
-                  className="py-3 px-6 rounded-full text-md font-medium border border-black hover:bg-gray-900 hover:text-white"
-                >
-                  Journal{' '}
-                  <FontAwesomeIcon
-                    className="pl-2 text-indigo-400 "
-                    icon={faBook}
-                  />
+            <div className=" flex items-center sm:mt-10  justify-center mt-3">
+              <div className="secondary-btn mx-2 flex">
+                <Link href="/journal" className="home-button">
+                  Journal <FontAwesomeIcon className="icon" icon={faBook} />
                 </Link>
               </div>
-              <div className="primary-btn ">
-                <Link
-                  href="/breath"
-                  className="py-3 px-6 rounded-full text-md font-medium border border-black hover:bg-gray-900 hover:text-gray-100"
-                >
-                  Breathe{' '}
-                  <FontAwesomeIcon
-                    className="pl-2 text-indigo-400 "
-                    icon={faWind}
-                  />
+              <div className="secondary-btn mx-2 flex">
+                <Link href="/breath" className="home-button">
+                  Breathe <FontAwesomeIcon className="icon" icon={faWind} />
                 </Link>
               </div>
-              <div className="secondary-btn mx-2">
-                <Link
-                  href="/affirm"
-                  className="py-3 px-6 rounded-full text-md font-medium border border-black hover:bg-gray-900 hover:text-gray-100"
-                >
-                  Affirm{' '}
-                  <FontAwesomeIcon
-                    className="pl-2 text-indigo-400 "
-                    icon={faSpa}
-                  />
+              <div className="secondary-btn mx-2 flex">
+                <Link href="/affirm" className="home-button" id="unique">
+                  Affirm <FontAwesomeIcon className="icon " icon={faSpa} />
                 </Link>
               </div>
             </div>

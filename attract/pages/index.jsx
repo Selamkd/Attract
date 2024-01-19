@@ -7,6 +7,13 @@ import Link from 'next/link';
 import logo from '../public/Attract-logo.png';
 import Image from 'next/image';
 function Login() {
+  useEffect(() => {
+    document.body.classList.add('disable-scroll');
+
+    return () => {
+      document.body.classList.remove('disable-scroll');
+    };
+  }, []);
   const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
