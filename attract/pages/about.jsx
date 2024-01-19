@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Header from '../components/Header';
 import Affirm from '../public/Affirm.png';
 import Breathe from '../public/Breathe.svg';
-import Journal from '../public/journal.png';
+import Journal from '../public/Journal.png';
 const About = () => {
   return (
     <>
