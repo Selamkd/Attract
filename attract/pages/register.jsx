@@ -50,23 +50,31 @@ export default function Register() {
         },
       });
 
-      if (error) throw error;
+      if (error) {
+        console.error('Supabase Error:', error.message, error.details);
+        throw error;
+      }
 
       const { data: userProfileData, error: userProfileError } = await supabase
         .from('user_profiles')
         .upsert([
           {
             id: userId,
+            user_id: userId,
             username: formData.username,
             email: formData.email,
           },
         ]);
 
-      if (userProfileError) throw userProfileError;
+      if (userProfileError) {
+        console.error('User Profile Error:', userProfileError.message);
+        throw userProfileError;
+      }
 
       alert('Check your email for verification link');
     } catch (error) {
       alert(error);
+      console.error('Supabase Error:', error.message, error.details);
     }
   }
 
