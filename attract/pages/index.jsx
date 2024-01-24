@@ -106,7 +106,7 @@ function Login() {
               href="/home"
               class=" text-xs border-b border-[#002D74] py-2 text-indigo-500 flex justify-center "
             >
-              <p className="mt-4">I'm just browsing</p>
+              <p className="mt-4">Continue as a guest</p>
             </Link>
 
             <div class="mt-3 text-xs flex justify-between items-center text-[#002D74]">

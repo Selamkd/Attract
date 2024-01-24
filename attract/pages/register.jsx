@@ -144,7 +144,7 @@ export default function Register() {
               href="/home"
               class=" text-xs border-b border-[#002D74] py-2 text-[#6A5ACD] flex justify-center "
             >
-              <p className="mt-4">I'm just browsing</p>
+              <p className="mt-4">Continue as a guest</p>
             </Link>
             <div class="mt-6 text-xs flex justify-between items-center text-[#002D74]">
               <p className="mr-1">Already have an account?</p>
